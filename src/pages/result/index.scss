@@ -1,0 +1,70 @@
+@import '../../app.scss';
+
+.result-index {
+  // padding-top: $space-big * 10;
+
+  .content {
+    position: relative;
+    margin: $space-normal;
+    margin-top: $space-small * 6;
+    padding: $space-small * 6 $space-small $space-small * 3 0;
+    border-radius: $space-small * 0.5;
+    box-shadow: 0 0 $space-big $space-small * 0.35 $color-black-shadow;
+  
+    .title-box {
+      position: absolute;
+      left: 0;
+      top: $space-small * 1.5;
+      padding-left: $space-small * 1.3;
+      line-height: $space-small * 3;
+      font-size: $space-small * 1.5;
+
+      &::after {
+        content: '';
+        display: block;
+        position: absolute;
+        top: $space-small * 0.8;
+        left: 0;
+        width: $space-small * 0.5;
+        height: $space-small * 1.4;
+        border-radius: $space-small * 0.3;
+        background: $color-main-light;
+        box-shadow: $space-small * 0.2 $space-small * 0.2 $space-small * 0.5 0 $color-main-shadow;
+      }
+    }
+
+    .call-btn-box {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-evenly;
+      align-items: center;
+      margin-top: $space-small * 3;
+      padding-left: $space-small;
+
+      .call-btn {
+        height: $space-small * 3;
+        line-height: $space-small * 3;
+        margin: 0;
+        padding: 0 $space-small * 1.5;
+        border-radius: $space-small * 1.5;
+      }
+    }
+
+    // 覆盖样式
+    .item-content__info-title {
+      width: 100%;
+      font-size: $space-small * 1.6;
+      font-weight: 500;
+      letter-spacing: $space-small * 0.1;
+    }
+
+    .at-list__item-extra {
+      display: none;
+    }
+
+    .toast-body-content__img-item {
+      width: $space-small * 2;
+      height: $space-small * 2;
+    }
+  }
+}

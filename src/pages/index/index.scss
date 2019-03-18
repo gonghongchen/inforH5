@@ -1,0 +1,130 @@
+@import '../../app.scss';
+
+.index {
+  // max-width: $space-small * 40;
+  padding: $space-normal;
+
+  .logo {
+    display: flex;
+    justify-content: center;
+    margin-top: $space-normal * 3;
+    margin-bottom: $space-normal * 4;
+
+    .logo-pic {
+      width: $space-normal * 20;
+      height: auto;
+    }
+  }
+
+  .form-box {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: $space-normal * 2;
+
+    .form-item {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: nowrap;
+      align-items: center;
+      box-sizing: border-box;
+      width: 100%;
+      height: $space-small * 5.5;
+      padding: $space-small;
+      margin-bottom: $space-normal;
+      border-radius: $space-small * 0.5;
+      box-shadow: 0 $space-small * 0.35 $space-big 0 $color-black-shadow;
+
+      .item-text {
+        flex: 1;
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        font-size: $space-small * 1.7;
+      }
+
+      .item-text-unselect {
+        @extend .item-text;
+        color: $color-black-light;
+      }
+
+      .item-icon {
+        width: $space-small * 2.5;
+        height: $space-small * 2.5;
+        margin-right: $space-small;
+      }
+
+      .item-button {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        box-sizing: border-box;
+        width: $space-small * 2.5;
+        height: $space-small * 2.5;
+        margin-left: $space-small;
+        background-color: $color-main-light;
+        border-radius: 50%;
+        box-shadow: $space-small * 0.25 $space-small * 0.5 $space-normal 0 $color-main-shadow;
+
+        .item-button-icon {
+          color: $color-white;
+          font-size: $space-small * 1.5;
+        }
+      }
+    }
+
+    // 下面是覆盖样式
+
+    // 地址选择器数据项
+    .weui-picker__item {
+      font-size: $space-small * 1.5;
+    }
+    // 地址选择器的“确定 & 取消”按钮
+    .weui-picker__action {
+      color: $color-main;
+    }
+    .weui-picker__action:first-child {
+      color: $color-black-light;
+    }
+  }
+
+  .record-box {
+    margin-top: $space-normal * 3;
+
+    .record-title-box {
+      display: flex;
+      flex: 1;
+      justify-content: center;
+      position: relative;
+      // padding-bottom: $space-small * 0.5;
+      font-size: $space-small * 1.5;
+
+      // &::after {
+      //   content: '';
+      //   display: block;
+      //   position: absolute;
+      //   left: 0;
+      //   bottom: 0;
+      //   width: $space-small * 2.5;
+      //   height: $space-small * 0.2;
+      //   border-radius: $space-small * 0.3;
+      //   background: $color-main-light;
+      //   // box-shadow: $space-small * 0.2 $space-small * 0.2 $space-small * 0.5 0 $color-main-shadow;
+      // }
+    }
+
+    .record-tags-box {
+      display: flex;
+      flex: 1;
+      justify-content: center;
+
+      .record-no-tips {
+        font-size: $space-small * 1.2;
+        color: $color-black-light;
+      }
+
+      .record-tag {
+        margin-right: $space-normal * 0.4;
+      }
+    }
+  }
+}
