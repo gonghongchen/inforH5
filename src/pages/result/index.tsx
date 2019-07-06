@@ -86,7 +86,7 @@ class Index extends Component {
           leftText='返回'
           onClickLeftIcon={this.goBack}
         />
-        <View className='content animated zoomIn'>
+        <View className='content animated flipInX'>
           <View className='title-box'>
             <Text>查询结果</Text>
           </View>

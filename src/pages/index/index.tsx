@@ -33,7 +33,7 @@ class Index extends Component {
   admins: string[] = []
   streets: string[] = []
   drawerData = [Object.keys(areaData), []] // 选项数据：0 供电所；1 街道。
-  selectedOptionIndex = [undefined, undefined]  // 当前选中的值的索引：0 供电所；1 街道。
+  selectedOptionIndex: [undefined | number, undefined | number] = [undefined, undefined]  // 当前选中的值的索引：0 供电所；1 街道。
   state = {
     managersHistory: [],
     showDrawer: false,
@@ -43,7 +43,7 @@ class Index extends Component {
   constructor(props) {
     super(props);
 
-    props.baseStore.setLogin(true);
+    props.baseStore.setLogin(true); // 进入首页后设置已登录标识，是为了保证在结果页刷新页面时页面能正常跳转到首页
     this.setManagersRecord();
   }
 
@@ -138,8 +138,13 @@ class Index extends Component {
     const { area } = areaStore;
     const val = this.drawerData[curDrawerType][i];
     if (curDrawerType === 0) {
-      this.drawerData[1] = Object.keys(areaData[val]);
-      area[0] !== val && area[1] !== '' && areaStore.resetArea(1);
+      // 选择了供电所后：
+      this.drawerData[1] = Object.keys(areaData[val]);  // 设置街道选项
+      // 清除街道选择记录：
+      if (area[0] !== val && area[1] !== '') {
+        this.selectedOptionIndex[1] = undefined;
+        areaStore.resetArea(1);
+      }
     }
     this.selectedOptionIndex[curDrawerType] = i;
     this.setState({
